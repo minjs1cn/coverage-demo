@@ -5,9 +5,12 @@
 	"license": "MIT",
 	"scripts": {
 		"minify:module": "node minify.js Coverage-module.json module.js",
-		"minify:lottie": "node minify.js Coverage-lottie.json lottie.js"
+		"minify:lottie": "node minify.js Coverage-lottie.json lottie.js",
+		"puppeteer": "node puppeteer.js",
+		"puppeteer:module": "node minify.js puppeteer-module.json module.js"
 	},
 	"dependencies": {
-		"@babel/core": "^7.16.7"
+		"@babel/core": "^7.16.7",
+		"puppeteer": "^13.0.1"
 	}
 }
