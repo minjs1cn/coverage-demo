@@ -1,0 +1,13 @@
+{
+	"name": "coverage-demo",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"minify:module": "node minify.js Coverage-module.json module.js",
+		"minify:lottie": "node minify.js Coverage-lottie.json lottie.js"
+	},
+	"dependencies": {
+		"@babel/core": "^7.16.7"
+	}
+}

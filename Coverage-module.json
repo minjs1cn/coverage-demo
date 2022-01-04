@@ -1,0 +1,34 @@
+[
+  {
+    "url": "http://127.0.0.1:5500/index.html",
+    "ranges": [
+      {
+        "start": 357,
+        "end": 443
+      },
+      {
+        "start": 1095,
+        "end": 1794
+      }
+    ],
+    "text": "<!DOCTYPE html>\n<html lang=\"en\">\n\t<head>\n\t\t<meta charset=\"UTF-8\" />\n\t\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n\t\t<title>coverage demo</title>\n\t</head>\n\t<body>\n\t\t<script src=\"./module.js\"></script>\n\t<!-- Code injected by live-server -->\n<script type=\"text/javascript\">\n\t// <![CDATA[  <-- For SVG support\n\tif ('WebSocket' in window) {\n\t\t(function () {\n\t\t\tfunction refreshCSS() {\n\t\t\t\tvar sheets = [].slice.call(document.getElementsByTagName(\"link\"));\n\t\t\t\tvar head = document.getElementsByTagName(\"head\")[0];\n\t\t\t\tfor (var i = 0; i < sheets.length; ++i) {\n\t\t\t\t\tvar elem = sheets[i];\n\t\t\t\t\tvar parent = elem.parentElement || head;\n\t\t\t\t\tparent.removeChild(elem);\n\t\t\t\t\tvar rel = elem.rel;\n\t\t\t\t\tif (elem.href && typeof rel != \"string\" || rel.length == 0 || rel.toLowerCase() == \"stylesheet\") {\n\t\t\t\t\t\tvar url = elem.href.replace(/(&|\\?)_cacheOverride=\\d+/, '');\n\t\t\t\t\t\telem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());\n\t\t\t\t\t}\n\t\t\t\t\tparent.appendChild(elem);\n\t\t\t\t}\n\t\t\t}\n\t\t\tvar protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';\n\t\t\tvar address = protocol + window.location.host + window.location.pathname + '/ws';\n\t\t\tvar socket = new WebSocket(address);\n\t\t\tsocket.onmessage = function (msg) {\n\t\t\t\tif (msg.data == 'reload') window.location.reload();\n\t\t\t\telse if (msg.data == 'refreshcss') refreshCSS();\n\t\t\t};\n\t\t\tif (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {\n\t\t\t\tconsole.log('Live reload enabled.');\n\t\t\t\tsessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);\n\t\t\t}\n\t\t})();\n\t}\n\telse {\n\t\tconsole.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');\n\t}\n\t// ]]>\n</script></body>\n</html>\n"
+  },
+  {
+    "url": "http://127.0.0.1:5500/module.js",
+    "ranges": [
+      {
+        "start": 0,
+        "end": 275
+      },
+      {
+        "start": 347,
+        "end": 735
+      },
+      {
+        "start": 799,
+        "end": 1213
+      }
+    ],
+    "text": "(function (root, factory) {\n\tif (typeof module === 'object' && typeof module.exports === 'object') {\n\t\tmodule.exports = factory();\n\t} else if (typeof define === 'function' && define.amd) {\n\t\tdefine(factory);\n\t} else if (typeof define === 'function' && define.cmd) {\n\t\tdefine(function (require, exports, module) {\n\t\t\tmodule.exports = factory();\n\t\t});\n\t} else {\n\t\troot.umdModule = factory();\n\t}\n})(this, function () {\n\t/**\n\t * 创建元素\n\t * @param {*} type\n\t * @returns\n\t */\n\tfunction createElement(type) {\n\t\treturn document.createElement(type);\n\t}\n\n\t/**\n\t * 插入元素\n\t * @param {*} parent\n\t * @param {*} child\n\t */\n\tfunction append(parent, child) {\n\t\tparent.appendChild(child);\n\t}\n\n\t/**\n\t * 移除元素\n\t * @param {*} parent\n\t * @param {*} child\n\t */\n\tfunction remove(parent, child) {\n\t\tparent.removeChild(child);\n\t}\n\n\t/**\n\t * 延迟执行\n\t * @param {*} fn\n\t * @param {*} time\n\t */\n\tfunction delay(fn, time) {\n\t\tsetTimeout(fn, time);\n\t}\n\n\t/**\n\t * 初始化\n\t */\n\tfunction init() {\n\t\tconst h1 = createElement('h1');\n\t\th1.innerText = 'hello world';\n\n\t\tconst body = document.body;\n\t\tappend(body, h1);\n\n\t\tdelay(function () {\n\t\t\t// remove(body, h1);\n\t\t}, 2000);\n\t}\n\n\tinit();\n\n\treturn {\n\t\tcreateElement,\n\t\tappend,\n\t\tremove,\n\t\tdelay,\n\t\tinit,\n\t};\n});\n"
+  }
+]
